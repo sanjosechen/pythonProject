@@ -50,23 +50,23 @@ if __name__ == '__main__':
     #ax1.set_title("post FEC BER projection")
     #ax1.legend()
 
-    b1 = [3.405e-07, 2.810e-10, 2.319e-13, 1.914e-16, 1.579e-19, 1.303e-22, 1.076e-25, 8.877e-29, 7.325e-32, 6.045e-35,
-          4.989e-38, 4.117e-41, 3.398e-44, 2.804e-47, 2.314e-50, 1.910e-53]
-    b2 = [3.052e-07, 3.498e-10, 2.078e-13, 6.400e-17, 1.021e-20, 8.449e-25, 3.623e-29, 8.050e-34, 9.271e-39, 5.534e-44,
-          1.712e-49, 2.745e-55, 2.282e-61, 9.828e-68, 2.194e-74, 2.539e-81]
+    b1 = [2.878e-06, 2.595e-08, 2.339e-10, 2.109e-12, 1.901e-14, 1.713e-16, 1.545e-18, 1.392e-20, 1.255e-22,
+          1.131e-24, 1.020e-26, 9.194e-29, 8.288e-31, 7.471e-33, 6.735e-35, 6.071e-37]
+    b2 = [2.686e-06, 2.781e-08, 2.507e-10, 1.967e-12, 1.344e-14, 7.990e-17, 4.136e-19, 1.863e-21, 7.309e-24,
+          2.495e-26, 7.417e-29, 1.919e-31, 4.321e-34, 8.472e-37, 1.446e-39, 2.148e-42]
 
     fig = plt.figure(figsize=(8,6))
     ax = plt.subplot(111)
-    ax.plot(x, b1, color='green', marker='*', linewidth=2, markersize=8, label="linear fit exponent")
-    ax.plot(x, b2, color='orange', marker='*', linewidth=2, markersize=8, label="2nd degree poly fit exponent")
+    ax.plot(x, b1, color='green', marker='*', linewidth=2, markersize=8, label="linear fit ")
+    ax.plot(x, b2, color='orange', marker='*', linewidth=2, markersize=8, label="2nd degree poly fit ")
     ax.set_title("post FEC BER projection")
     ax.set_yscale('log')
     ax.set_xlabel("prbs error bin t=")
     ax.set_ylabel("prbs ber in log format")
-    xd = [0, 1, 2]
-    yd = [3.052e-07, 3.498e-10, 2.078e-13]
+    xd = [0, 1, 2, 3, 4]
+    yd = [2.684e-06, 2.787e-08, 2.502e-10, 1.969e-12, 5.882e-15]
     ax.scatter(xd, yd, s=200, c='r')
-    for i in range(3):
+    for i in range(len(xd)):
         x = xd[i]
         y = yd[i]
         s = 'sample' + str(i)
